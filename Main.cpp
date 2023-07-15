@@ -3,13 +3,24 @@
 
 int main()
 {
-	const char* ptr = "Hello";
-	if (ptr)
-		Log(ptr);
-	else if (ptr == "Hello")
-		Log("Ptr is Hello!");
-	else
-		Log("Ptr is null!");
+	for (int i = 0; i < 5; i++)
+	{
+		Log("Hello World!");
+	}
+
+	Log("=============================================================");
+
+	int i = 0;
+	while (i < 5)
+	{
+		Log("Hello World!");
+		i++;
+	}
+
+	do
+	{
+		while (i < 5);
+	}
 
 	std::cin.get();
 }
