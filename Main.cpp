@@ -5,22 +5,14 @@ int main()
 {
 	for (int i = 0; i < 5; i++)
 	{
+		if ((i + 1) % 2 == 0)
+			return 0;
 		Log("Hello World!");
+		std::cout << i << std::endl;
 	}
 
-	Log("=============================================================");
-
-	int i = 0;
-	while (i < 5)
-	{
-		Log("Hello World!");
-		i++;
-	}
-
-	do
-	{
-		while (i < 5);
-	}
+	if (5 > 8)
+		return 0;
 
 	std::cin.get();
 }
