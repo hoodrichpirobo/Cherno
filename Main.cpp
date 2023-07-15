@@ -3,16 +3,13 @@
 
 int main()
 {
-	int a = 8;
-	a++;
-	const char* string = "Hello";
+	const char* ptr = "Hello";
+	if (ptr)
+		Log(ptr);
+	else if (ptr == "Hello")
+		Log("Ptr is Hello!");
+	else
+		Log("Ptr is null!");
 
-	for (int i = 0; i < 5; i++)
-	{
-		const char c = string[i];
-		std::cout << c << std::endl;
-	}
-
-	Log("Hello World!");
 	std::cin.get();
 }
