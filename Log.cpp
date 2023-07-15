@@ -1,10 +1,6 @@
 #include "Log.h"
-#include <iostream>
 
-void InitLog()
-{
-	Log("Initializing Log");
-}
+#include <iostream>
 
 void Log(const char* message)
 {
