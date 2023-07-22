@@ -1,37 +1,48 @@
 #include <iostream>
 
-#define LOG(x) std::cout << x << std::endl
-
-#define struct class
-
-struct Player
+class Log
 {
+public:
+
+	const int LogLevelError = 0;
+	const int LogLevelWarning = 1;
+	const int LogLevelInfo = 2;
+
 private:
-	int x, y;
-	int speed;
 
-	void Move( int xa, int ya)
+	int m_LogLevel = LogLevelInfo;
+
+public:
+	void SetLevel(int level)
 	{
-		x += xa * speed;
-		y += ya * speed;
+		m_LogLevel = level;
 	}
-};
 
-struct Vec2
-{
-	float x, y;
-
-	void Add(const Vec2& other)
+	void Error(const char* message)
 	{
-		x += other.x;
-		y += other.y;
+		if (m_LogLevel >= LogLevelError)
+			std::cout << "[ERROR]: " << message << std::endl;
+	}
+
+	void Warn(const char* message)
+	{
+		if(m_LogLevel >= LogLevelWarning)
+			std::cout << "[WARNING]: " << message << std::endl;
+	}
+
+	void Info(const char* message)
+	{
+		if(m_LogLevel >= LogLevelInfo)
+			std::cout << "[INFO]: " << message << std::endl;
 	}
 };
 
 int main()
 {
-	Player player;
-	player.Move( 1, -1);
-	
+	Log log;
+	log.SetLevel(log.LogLevelError);
+	log.Warn("Hello!");
+	log.Error("Hello!");
+	log.Info("Hello!");
 	std::cin.get();
 }
