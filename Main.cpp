@@ -1,31 +1,18 @@
 #include <iostream>
 
-struct Entity
+enum Example : char
 {
-	int x, y;
-	
-	static void Print()
-	{
-		std::cout << x << ", " << y << std::endl;
-	}
+	A = 5, B, C
 };
-
-static void Print()
-{
-	std::cout << x << ", " << y << std::endl;
-}
 
 int main()
 {
-	Entity e;
-	e.x = 2;
-	e.y = 3;
+	Example value = B;
 
-	Entity e1;
-	e1.x = 5;
-	e1.y = 8;
+	if (value == 1)
+	{
+		// Do something here
+	}
 
-	Entity::Print();
-	Entity::Print();
 	std::cin.get();
 }
